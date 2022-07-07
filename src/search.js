@@ -25,7 +25,6 @@ const search = async (params) => {
     })
     .then(({ status, data }) => {
       if (status != 200) throw new Error(data.message || `Unknown error during search.`);
-      console.log(data)
       data.docs.map(({ username, password }) => console.log(`${username}:${password}`))
       return (data);
     })
